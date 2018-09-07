@@ -3,7 +3,6 @@
 // are not available in the service worker.
 importScripts('https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/4.8.1/firebase-messaging.js');
-import logo from './logo.svg';
 
 // Initialize the Firebase app in the service worker by passing in the
 // messagingSenderId.
@@ -23,11 +22,9 @@ messaging.setBackgroundMessageHandler(function(payload) {
     var notificationTitle = 'New Updates';
     var notificationOptions = {
       body: payload.message,
-      icon: logo
     };
   
-    return self.registration.showNotification(notificationTitle,
-      notificationOptions);
+    return self.registration.showNotification(notificationTitle, notificationOptions);
 });
 
 
