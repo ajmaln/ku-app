@@ -27,11 +27,3 @@ messaging.setBackgroundMessageHandler(function(payload) {
   
     return self.registration.showNotification(notificationTitle, notificationOptions);
 });
-
-function sendTokenToServer(tooken) {
-
-}
-
-function setTokenSentToServer(val) {
-
-}
