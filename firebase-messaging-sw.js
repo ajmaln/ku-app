@@ -28,10 +28,6 @@ messaging.setBackgroundMessageHandler(function(payload) {
     return self.registration.showNotification(notificationTitle, notificationOptions);
 });
 
-messaging.onMessage((payload) => {
-  console.log(payload)
-})
-
 function sendTokenToServer(tooken) {
 
 }
