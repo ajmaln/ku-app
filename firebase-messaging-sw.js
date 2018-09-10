@@ -18,6 +18,7 @@ const messaging = firebase.messaging();
 
 messaging.setBackgroundMessageHandler(function(payload) {
     console.log('[firebase-messaging-sw.js] Received background message ', payload);
+    console.log(payload)
     // Customize notification here
     var notificationTitle = 'New Updates';
     var notificationOptions = {
@@ -26,6 +27,10 @@ messaging.setBackgroundMessageHandler(function(payload) {
   
     return self.registration.showNotification(notificationTitle, notificationOptions);
 });
+
+messaging.onMessage((payload) => {
+  console.log(payload)
+})
 
 function sendTokenToServer(tooken) {
 
